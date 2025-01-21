@@ -463,6 +463,8 @@
 
               {%- when 'variant_picker' -%}
                 {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
+              {%- when 'product_personalized' -%}
+                {% render 'product_personalized' %}
               {%- when 'buy_buttons' -%}
                 {%- render 'buy-buttons',
                   block: block,
@@ -893,6 +895,12 @@
           "default": "circle"
         }
       ]
+    },
+    {
+      "type": "product_personalized",
+      "name": "t:sections.main-product.blocks.product_personalized.name",
+      "limit": 1,
+      "settings": []
     },
     {
       "type": "buy_buttons",
