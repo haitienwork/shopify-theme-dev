@@ -1,0 +1,63 @@
+{% comment %} sections/custom-features.liquid {% endcomment %}
+
+<div class="features-grid">
+  {% for block in section.blocks %}
+    <div class="feature-item" {{ block.shopify_attributes }}>
+      {% case block.type %}
+        {% when 'feature' %}
+          <div class="feature">
+            {% if block.settings.icon != blank %}
+              <img src="{{ block.settings.icon | img_url: '100x' }}" alt="{{ block.settings.title }}" width="100" height="100">
+            {% endif %}
+            <h3>{{ block.settings.title }}</h3>
+            <p>{{ block.settings.description }}</p>
+          </div>
+      {% endcase %}
+    </div>
+  {% endfor %}
+</div>
+
+{% schema %}
+{
+  "name": "Features Section",
+  "blocks": [
+    {
+      "type": "feature",
+      "name": "Feature",
+      "limit": 4,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Feature Title"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description",
+          "default": "Feature description goes here"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Features Grid",
+      "blocks": [
+        {
+          "type": "feature"
+        },
+        {
+          "type": "feature"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
