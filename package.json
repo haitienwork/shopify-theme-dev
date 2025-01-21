@@ -1,0 +1,16 @@
+{
+  "name": "my-new-theme",
+  "module": "index.ts",
+  "type": "module",
+  "scripts": {
+    "dev": "shopify theme dev",
+    "pull": "shopify theme pull -e development",
+    "push": "shopify theme push -e development"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  }
+}
