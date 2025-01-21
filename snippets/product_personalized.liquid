@@ -1,6 +1,6 @@
 {% assign target = product %}
 
-<div class="field">
+<div class="field" {{ block.shopify_attributes }}>
   <textarea type="text" value="{{ target.title }}" class="text-area field__input" id="product-personalized"></textarea>
   <label class="field__label" for="product-personalized">Product Personalized</label>
 </div>
